@@ -4,6 +4,7 @@ import Hero from '../components/homeSections/Hero';
 import FeaturedGallery from '../components/homeSections/FeaturedGallery';
 import About from '../components/homeSections/About';
 import Packages from '../components/homeSections/Packages';
+import Location from '../components/homeSections/Location';
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <FeaturedGallery />
       <About />
       <Packages />
+      <Location />
     </div>
   )
 }
