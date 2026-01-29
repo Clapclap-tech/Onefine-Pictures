@@ -49,7 +49,7 @@ const Header = () => {
         </div>
 
         <div className="ml-auto">
-            <Button className='bg-red-600 px-4 py-2 text-white'>CONTACT US</Button>
+            <Button className='bg-red-600 px-4 py-2 text-white'>LOGIN</Button>
         </div>
         
     </nav>
