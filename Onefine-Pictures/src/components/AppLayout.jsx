@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './ui/Header';
+import Footer from './ui/Footer';
 
 function AppLayout ({ children }) {
   return (
@@ -12,6 +13,10 @@ function AppLayout ({ children }) {
         <main className="flex-1 pt-20 bg-white">
             {children}
         </main>
+
+        <footer>
+          <Footer />
+        </footer>
     </div>
   )
 }
