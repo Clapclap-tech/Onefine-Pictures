@@ -9,7 +9,7 @@ function AppLayout ({ children }) {
           <Header />
         </header>
 
-        <main className="flex-1 p-4 bg-blue-200/50">
+        <main className="flex-1 pt-20 p-4 bg-white">
             {children}
         </main>
     </div>

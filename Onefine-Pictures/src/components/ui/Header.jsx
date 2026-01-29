@@ -19,9 +19,9 @@ const Header = () => {
   }, []);
 
   return (
-    <nav className={`fixed h-18 top-0 left-0 w-full backdrop-blur-lg shadow-xl/30 z-50 p-8 flex items-center transition-all duration-300 ${
+    <nav className={`fixed h-20 top-0 left-0 w-full z-50 p-8 flex items-center transition-all duration-300 ${
     scrolled
-    ? "bg-blue-800/90 backdrop-blur-md shadow-lg"
+    ? "bg-white-800/90 backdrop-blur-md shadow-lg"
     : "bg-transparent"
     }`}
     >
@@ -46,14 +46,10 @@ const Header = () => {
               <span className='w-2 h-2 bg-red-600 rounded-full'></span>
               <span>ABOUT</span>
             </a>
-            <a href="#" className="flex items-center space-x-2">
-              <span className='w-2 h-2 bg-red-600 rounded-full'></span>
-              <span>CONTACT US</span>
-            </a>
         </div>
 
         <div className="ml-auto">
-            <Button className='bg-red-600 px-4 py-2'>BOOK NOW</Button>
+            <Button className='bg-red-600 px-4 py-2 text-white'>CONTACT US</Button>
         </div>
         
     </nav>
