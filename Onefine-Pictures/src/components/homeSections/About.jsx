@@ -1,39 +1,64 @@
-import React from 'react'
-import Section from '../Section';
-import Button from '../ui/Button';
+import React from "react";
+import Section from "../Section";
+import Button from "../ui/Button";
 
 const About = () => {
   return (
     <Section className="bg-white">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        
-        <div>
-          <h2 className="text-4xl font-bold mb-4 text-gray-800">
-            ABOUT
-          </h2>
-          <p className="text-gray-600 leading-relaxed mb-4">
-          </p>
-          <p className="text-gray-600 leading-relaxed">
-                      </p>
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
-          <div className="mt-6">
-            <Button className="bg-red-600 text-white px-6 py-3">
-              Learn More
+        {/* Text */}
+        <div>
+          <p className="uppercase tracking-[0.35em] text-red-600 text-sm mb-4">
+            About The Studio
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-semibold text-black mb-6">
+            Creating Visual Stories
+          </h2>
+
+          <div className="w-20 h-[2px] bg-black mb-6" />
+
+          <p className="text-gray-700 leading-relaxed mb-4">
+            We are a creative studio dedicated to capturing moments with clarity,
+            emotion, and intention. Our work focuses on clean composition,
+            authentic storytelling, and timeless visuals.
+          </p>
+
+          <p className="text-gray-700 leading-relaxed">
+            Whether in-studio or on location, we approach every project with a
+            balance of creativity and technical precision—turning ideas into
+            powerful imagery.
+          </p>
+
+          <div className="mt-10">
+            <Button className="relative overflow-hidden px-8 py-3 rounded-full bg-red-600 text-white group">
+              <span className="relative z-10">
+                Learn More
+              </span>
+              <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </Button>
           </div>
         </div>
 
-        <div>
+        {/* Image */}
+        <div className="relative group">
+          {/* Black frame */}
+          <div className="absolute inset-0 border border-black rounded-2xl translate-x-4 translate-y-4 opacity-30 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-300" />
+          
           <img
             src="/src/assets/about.jpg"
-            alt="About Me"
-            className="rounded-xl shadow-lg w-full object-cover transition-transform duration-300 hover:scale-105"
+            alt="About the Studio"
+            className="relative rounded-2xl w-full object-cover shadow-xl transition-transform duration-500 group-hover:scale-105"
           />
-        </div>
+
+  <div className="absolute bottom-0 left-0 w-16 h-16 border-l-4 border-b-4 border-red-600 rounded-bl-2xl transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 pointer-events-none"/>
+  
+  </div>
 
       </div>
     </Section>
-  )
-}
+  );
+};
 
 export default About;

@@ -1,46 +1,82 @@
 import React from "react";
-import Button from '../ui/Button'
-import Section from '../Section'
+import Button from "../ui/Button";
+import Section from "../Section";
 
 const packages = [
   {
     title: "Family",
-    price: "",
+    price: "Starting at ₱—",
     desc: "Capture the sacred and special moments of your family."
   },
   {
     title: "Graduation",
-    price: "",
+    price: "Starting at ₱—",
     desc: "Professional portraits that reflect your personality and style."
   },
   {
     title: "Event Coverage",
-    price: "",
-    desc: "Full coverage for weddings, birthdays, or other special occasions."
+    price: "Starting at ₱—",
+    desc: "Full coverage for weddings, birthdays, and special occasions."
   },
 ];
 
 const Packages = () => {
   return (
-    <Section className="bg-gray-50">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-12">Our Packages</h2>
+    <Section className="relative bg-white overflow-hidden">
 
+      {/* Top inner shadow */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/10 to-transparent" />
+
+      {/* Bottom inner shadow */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/10 to-transparent" />
+
+      <div className="max-w-7xl mx-auto">
+
+        {/* Header */}
+        <div className="text-center mb-16">
+          <p className="uppercase tracking-[0.35em] text-red-600 text-sm mb-4">
+            Packages
+          </p>
+          <h2 className="text-4xl md:text-5xl font-semibold text-black mb-6">
+            Our Services
+          </h2>
+          <div className="w-20 h-[2px] bg-black mx-auto" />
+        </div>
+
+        {/* Cards */}
         <div className="grid md:grid-cols-3 gap-8">
           {packages.map((pkg, i) => (
             <div
               key={i}
-              className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition"
+              className="group relative bg-white border border-black/10 rounded-2xl p-8
+              transition-all duration-300 hover:-translate-y-2 hover:border-black"
             >
-              <h3 className="text-2xl font-semibold mb-2">{pkg.title}</h3>
-              <p className="text-red-600 font-bold mb-4">{pkg.price}</p>
-              <p className="text-gray-600 mb-6">{pkg.desc}</p>
-              <Button className="bg-red-600 text-white px-6 py-3">
-                Book Now
+
+              {/* Red accent line */}
+              <div className="absolute top-0 left-0 h-1 w-12 bg-red-600 rounded-tl-2xl rounded-br-2xl" />
+
+              <h3 className="text-2xl font-semibold text-black mb-2">
+                {pkg.title}
+              </h3>
+
+              <p className="text-red-600 font-medium mb-4">
+                {pkg.price}
+              </p>
+
+              <p className="text-gray-700 mb-8 leading-relaxed">
+                {pkg.desc}
+              </p>
+
+              <Button className="relative overflow-hidden px-8 py-3 rounded-full bg-red-600 text-white group">
+                <span className="relative z-10">
+                  View Gallery
+                </span>
+                <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </Button>
             </div>
           ))}
         </div>
+
       </div>
     </Section>
   );
