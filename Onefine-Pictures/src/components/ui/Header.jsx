@@ -30,19 +30,19 @@ const Header = () => {
         </div>
 
         <div className="absolute left-1/2 transform -translate-x-1/2 space-x-8 font-bold text-xl flex justify-center items-center">
-            <a href="#" className="flex items-center space-x-2">
+            <a href="/" className="flex items-center space-x-2">
               <span className='w-2 h-2 bg-red-600 rounded-full'></span>
               <span>HOME</span>
             </a>
-            <a href="#" className="flex items-center space-x-2">
+            <a href="/gallery" className="flex items-center space-x-2">
               <span className='w-2 h-2 bg-red-600 rounded-full'></span>
               <span>GALLERY</span>
             </a>
-            <a href="#" className="flex items-center space-x-2">
+            <a href="/packages" className="flex items-center space-x-2">
               <span className='w-2 h-2 bg-red-600 rounded-full'></span>
               <span>PACKAGES</span>
             </a>
-            <a href="#" className="flex items-center space-x-2">
+            <a href="/about" className="flex items-center space-x-2">
               <span className='w-2 h-2 bg-red-600 rounded-full'></span>
               <span>ABOUT</span>
             </a>
