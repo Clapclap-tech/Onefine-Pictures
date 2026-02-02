@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+.clip-parallelogram {
+    clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
+    transition: all 0.3s ease;
+}
+
+.clip-parallelogram {
+    transform: scale(1.05);
+    background-color: #e11d48;
+}
+
+.clip-parallelogram:hover {
+    transform: translateX(5px) scale(1.05);
+}
