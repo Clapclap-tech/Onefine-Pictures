@@ -22,13 +22,7 @@ const packages = [
 
 const Packages = () => {
   return (
-    <Section className="relative bg-white overflow-hidden">
-
-      {/* Top inner shadow */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/10 to-transparent" />
-
-      {/* Bottom inner shadow */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/10 to-transparent" />
+    <Section className="relative bg-white overflow-hidden shadow-[inset_0_0_60px_rgba(0,0,0,0.15)]">
 
       <div className="max-w-7xl mx-auto">
 
