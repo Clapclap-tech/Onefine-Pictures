@@ -1,8 +1,8 @@
 import React from 'react'
 
-const PictureGridHorizontal = ({images}) => {
+const PictureGridHorizontal = ({images, className=''}) => {
   return (
-    <div className="flex gap-6 overflow-x-auto pb-4 scroll-smooth no-scrollbar">
+    <div className={`flex gap-6 overflow-x-auto pb-4 scroll-smooth ${className}`}>
       {images.map((img, i) => (
         <div
           key={i}

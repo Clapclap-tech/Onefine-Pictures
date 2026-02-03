@@ -24,12 +24,12 @@ const FeaturedGallerySection = () => {
   const [activeCategory,setActiveCategory] = useState("All");
 
   return (
-    <Section fullScreen className='flex justify-center shadow-[inset_0_0_60px_rgba(0,0,0,0.15)]'>
+    <Section className='flex justify-center shadow-[inset_0_0_60px_rgba(0,0,0,0.15)]'>
 
       <div className='max-w-6xl mx-auto'>
 
       {/*HEADER*/}
-        <div className='mb-10 -mt-60 text-center'>
+        <div className='mb-10 text-center'>
           <h2 className='text-4xl font-semibold tracking-tight text-gray-900'>
             Our Gallery
           </h2>
@@ -39,7 +39,7 @@ const FeaturedGallerySection = () => {
         </div>
 
         {/*CATEGORIES*/}
-        <div className='flex justify-center gap-8 mb-14 text-sm uppercase tracking-widest'>
+        <div className='flex justify-center gap-8 mb-10 text-sm uppercase'>
           {categories.map((categories) => (
             <a key={categories} 
             href='#'

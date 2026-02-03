@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <nav className={`fixed h-20 top-0 left-0 w-full z-50 p-8 flex items-center transition-all duration-300 ${
     scrolled
-    ? "bg-white-800/90 backdrop-blur-md shadow-lg"
+    ? "bg-white backdrop-blur-md shadow-lg"
     : "bg-transparent"
     }`}
     >

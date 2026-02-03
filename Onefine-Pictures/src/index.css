@@ -13,3 +13,7 @@
 .clip-parallelogram:hover {
     transform: translateX(5px) scale(1.05);
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+    display:none;
+}
