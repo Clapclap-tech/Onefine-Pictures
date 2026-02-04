@@ -13,11 +13,11 @@ const Hero = () => {
       ></div>
 
       <div className="relative z-10 text-center max-w-3xl">
-        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
+        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-shadow-lg">
           Capture Your <span className="text-red-500">Moments</span>
         </h1>
 
-        <p className="mt-6 text-lg md:text-xl text-gray-500">
+        <p className="mt-6 text-lg md:text-xl text-gray-500 text-shadow-lg">
           Timeless photography for life’s most meaningful moments. Emotional & Story-Driven
         </p>
 
