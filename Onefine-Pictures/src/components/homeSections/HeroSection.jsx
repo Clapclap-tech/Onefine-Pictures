@@ -4,7 +4,7 @@ import Section from '../Section'
 
 const Hero = () => {
   return (
-    <Section fullScreen className="flex justify-center">
+    <Section fullScreen className="flex justify-center -mt-20">
 
       <div className="absolute inset-0 bg-cover bg-center"
       style={{

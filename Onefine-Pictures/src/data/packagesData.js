@@ -6,7 +6,7 @@ export const packagesData = {
       {
         id: "grad-basic",
         title: "Package A",
-        price: "₱—",
+        price: "₱2500",
         desc: "Essential graduation photo package.",
         inclusions: [
           { qty: 1, size: "12x16", subject: "Toga", frame: "Classic Frame" },

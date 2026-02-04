@@ -13,12 +13,12 @@ const PackagesHeader = () => {
       {/* Header Content */}
       <div className="relative z-10 text-center max-w-3xl px-4">
         {/* Page Title */}
-        <h1 className="text-6xl md:text-7xl font-extrabold text-white drop-shadow-lg">
+        <h1 className="text-6xl md:text-7xl font-extrabold text-white drop-shadow-lg text-shadow-lg">
           Packages
         </h1>
 
         {/* Brief Introduction */}
-        <p className="mt-6 text-white/80 text-lg md:text-xl drop-shadow-md">
+        <p className="mt-6 text-white/80 text-lg md:text-xl drop-shadow-md text-shadow-lg">
           Explore our photography portfolio capturing unforgettable moments,  
           from intimate portraits to grand events.
         </p>
