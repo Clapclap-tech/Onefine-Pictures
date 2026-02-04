@@ -7,16 +7,15 @@ import CoupleShots from '../galleryCategories/CoupleShots';
 import BarkadaShots from '../galleryCategories/BarkadaShots';
 import GroupShots from '../galleryCategories/GroupShots';
 import ParentsShots from '../galleryCategories/ParentsShots';
+import Button from '../ui/Button';
 
 
 const categories = [
   "All",
   "Graduation",
   "Family",
-  "Couples",
   "Barkada",
   "Group",
-  "Parents",
 ];
 
 const FeaturedGallerySection = () => {
@@ -72,6 +71,15 @@ const FeaturedGallerySection = () => {
           {activeCategory === "Barkada" &&  <BarkadaShots />}
           {activeCategory === "Group" &&  <GroupShots />}
           {activeCategory === "Parents" &&  <ParentsShots />}
+        </div>
+          
+        <div className='mt-12 flex justify-center'>
+              <Button className="relative overflow-hidden px-8 py-3 rounded-full bg-red-600 text-white group">
+                <span className="relative z-10">
+                  View More
+                </span>
+                <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              </Button>          
         </div>
 
       </div>

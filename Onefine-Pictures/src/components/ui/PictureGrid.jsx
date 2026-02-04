@@ -10,7 +10,7 @@ const PictureGrid = ({images}) => {
         >
             <img
             src={img}
-            className="w-full h-80 object-cover transform group-hover:scale-105 transition duration-700"
+            className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700"
             />
         </div>
         ))}

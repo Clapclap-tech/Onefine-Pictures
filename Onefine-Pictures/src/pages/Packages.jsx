@@ -1,8 +1,15 @@
 import React from 'react'
+import PackagesHeader from '../components/packages/PackagesHeader'
+import GraduationPackage from '../components/packages/GraduationPackage'
 
 const Packages = () => {
   return (
-    <div>Packages</div>
+    <div>
+      <PackagesHeader />
+      
+      <GraduationPackage />
+
+    </div>
   )
 }
 

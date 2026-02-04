@@ -1,13 +1,13 @@
 import React from 'react'
 import FlowGallery from '../ui/FlowGallery'
 import AutoScrollGallery from '../ui/AutoScrollGallery'
+import PictureGrid from '../ui/PictureGrid'
 
 const FamilyShots = () => {
   return (
-    <AutoScrollGallery images={[
-        "/src/assets/gallery/g1.jpg",
-        "/src/assets/gallery/g1.jpg",
-        "/src/assets/gallery/g1.jpg",
+    <PictureGrid images={[
+        "/src/assets/gallery/Family/56.jpg",
+
     ]} />
   )
 }
