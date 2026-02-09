@@ -6,6 +6,7 @@ import About from '../components/homeSections/AboutSection';
 import Packages from '../components/homeSections/PackagesSection';
 import Location from '../components/homeSections/LocationSection';
 import ServicesSection from '../components/homeSections/ServicesSection';
+import BookingCTA from '../components/homeSections/BookingCTA';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Hero />
       <FeaturedGallery />
       <ServicesSection />
+      <BookingCTA />
       <About />
       <Location />
 
