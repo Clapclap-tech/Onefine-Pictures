@@ -6,12 +6,12 @@ import PictureGrid from '../ui/PictureGrid'
 const GraduationShots = () => {
   return (
     <PictureGrid images={[
-        "/src/assets/gallery/Grad/16x20-aiah.jpg",
-        "/src/assets/gallery/Grad/16x20-ctu.jpg",
-        "/src/assets/gallery/Grad/16x20-jamie.jpg",
-        "/src/assets/gallery/Grad/16x20-joshua.jpg",
-        "/src/assets/gallery/Grad/26.jpg",
-        "/src/assets/gallery/Grad/32-2.jpg",
+        "16x20-aiah",
+        "16x20-ctu",
+        "16x20-jamie",
+        "16x20-joshua",
+        "26",
+        "grad33",
     ]} />
   )
 }

@@ -9,7 +9,6 @@ const Packages = () => {
       <PackagesHeader />
       
       <GraduationPackage />
-      <FamilyPackages />
 
     </div>
   )

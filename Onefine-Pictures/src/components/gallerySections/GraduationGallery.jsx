@@ -50,13 +50,13 @@ const GraduationGallery = () => {
         <div className="relative">
           <AutoScrollGallery className='overflow-hidden hide-scrollbar'
             images={[
-              "/src/assets/gallery/g1.jpg",
-              "/src/assets/gallery/g2.jpg",
-              "/src/assets/gallery/g3.jpg",
-              "/src/assets/gallery/g4.jpg",
-              "/src/assets/gallery/g1.jpg",
-              "/src/assets/gallery/g2.jpg",
-              "/src/assets/gallery/g3.jpg",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
             ]}
           />
         </div>

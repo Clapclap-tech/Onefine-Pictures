@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <nav
       className={`fixed h-20 top-0 left-0 w-full z-50 p-4 md:p-8 flex items-center justify-between transition-all duration-300 ${
-        scrolled ? "bg-white backdrop-blur-md shadow-lg" : "bg-transparent"
+        scrolled ? "bg-white shadow-lg" : "bg-white"
       }`}
     >
       {/* Logo */}

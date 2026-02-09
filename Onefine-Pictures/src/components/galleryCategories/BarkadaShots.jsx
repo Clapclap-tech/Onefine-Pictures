@@ -6,8 +6,8 @@ import PictureGrid from '../ui/PictureGrid'
 const BarkadaShots = () => {
   return (
     <PictureGrid images={[
-        "/src/assets/gallery/Barkada/43.jpg",
-        "/src/assets/gallery/Barkada/46.jpg",
+        "43",
+        "46",
     ]} />
   )
 }

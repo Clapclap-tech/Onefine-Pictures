@@ -9,7 +9,6 @@ import GroupShots from '../galleryCategories/GroupShots';
 import ParentsShots from '../galleryCategories/ParentsShots';
 import Button from '../ui/Button';
 
-
 const categories = [
   "All",
   "Graduation",

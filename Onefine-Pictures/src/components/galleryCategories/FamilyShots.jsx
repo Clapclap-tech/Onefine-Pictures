@@ -6,7 +6,7 @@ import PictureGrid from '../ui/PictureGrid'
 const FamilyShots = () => {
   return (
     <PictureGrid images={[
-        "/src/assets/gallery/Family/56.jpg",
+        "59",
 
     ]} />
   )
