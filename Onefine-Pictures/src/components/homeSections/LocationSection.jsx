@@ -1,12 +1,14 @@
 import React from "react";
-import Section from '../Section'
+import Section from '../Section';
 
 const Location = () => {
   return (
-    <Section className="bg-white">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <Section className="relative bg-gray-50 overflow-hidden py-20">
+
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
         
-        <div className="text-center md:text-left">
+        {/* Text */}
+        <div className="text-center md:text-left p-10">
           <h2 className="text-4xl font-bold mb-4 text-gray-800">
             Our Location
           </h2>
@@ -29,14 +31,18 @@ const Location = () => {
           </div>
         </div>
 
-        <div className="rounded-xl overflow-hidden shadow-lg h-[400px]">
-          <iframe
-            title="Google Map Location"
-            src="https://www.google.com/maps?q=8W36%2BPJV%2C+Cebu+City%2C+6000+Cebu&output=embed"
-            className="w-full h-full border-0"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+        {/* Map */}
+        <div className="relative">
+          <div className="absolute -top-6 -left-6 w-full h-full rounded-xl bg-red-100 opacity-70 -z-10 rotate-3"></div>
+          <div className="rounded-xl overflow-hidden shadow-2xl h-[400px]">
+            <iframe
+              title="Google Map Location"
+              src="https://www.google.com/maps?q=8W36%2BPJV%2C+Cebu+City%2C+6000+Cebu&output=embed"
+              className="w-full h-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </div>
     </Section>

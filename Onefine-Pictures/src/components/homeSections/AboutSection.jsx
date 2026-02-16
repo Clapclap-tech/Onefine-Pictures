@@ -4,8 +4,28 @@ import Button from "../ui/Button";
 
 const About = () => {
   return (
-    <Section className="bg-white">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <Section className="relative bg-white overflow-hidden">
+      
+      {/* 🔴 Background Depth Shape */}
+      <div className="absolute -left-40 -top-40 w-[500px] h-[500px] 
+                      bg-red-600 opacity-10 rotate-45 
+                      rounded-3xl blur-3xl"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+        {/* Image */}
+        <div className="relative group">
+          {/* Black frame */}
+          <div className="absolute inset-0 border border-black rounded-2xl translate-x-4 translate-y-4 opacity-30 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-300" />
+          
+          <img
+            src="/src/assets/about.jpg"
+            alt="About the Studio"
+            className="relative rounded-2xl w-full object-cover shadow-xl transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <div className="absolute bottom-0 left-0 w-16 h-16 border-l-4 border-b-4 border-red-600 rounded-bl-2xl transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 pointer-events-none"/>
+        </div>
 
         {/* Text */}
         <div>
@@ -40,21 +60,6 @@ const About = () => {
             </Button>
           </div>
         </div>
-
-        {/* Image */}
-        <div className="relative group">
-          {/* Black frame */}
-          <div className="absolute inset-0 border border-black rounded-2xl translate-x-4 translate-y-4 opacity-30 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-300" />
-          
-          <img
-            src="/src/assets/about.jpg"
-            alt="About the Studio"
-            className="relative rounded-2xl w-full object-cover shadow-xl transition-transform duration-500 group-hover:scale-105"
-          />
-
-  <div className="absolute bottom-0 left-0 w-16 h-16 border-l-4 border-b-4 border-red-600 rounded-bl-2xl transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 pointer-events-none"/>
-  
-  </div>
 
       </div>
     </Section>

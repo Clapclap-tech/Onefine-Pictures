@@ -27,7 +27,7 @@ const FeaturedGallerySection = () => {
       <div className='max-w-6xl mx-auto'>
 
       {/*HEADER*/}
-        <div className='mb-10 text-center'>
+        <div className='mb-12 text-center'>
           <h2 className='text-4xl font-semibold tracking-tight text-gray-900'>
             Our Gallery
           </h2>
