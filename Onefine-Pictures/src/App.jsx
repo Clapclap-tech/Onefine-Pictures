@@ -14,10 +14,10 @@ import About from './pages/About';
       <Route path='/' element={<RootLayout />}>
         <Route element={<AppLayout />}>
           <Route index element={<Home />} />
-          <Route path='/gallery' element={<Gallery />} />
-          <Route path='/packages' element={<Packages />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/gallery' element={<Gallery />} />
+          <Route path='gallery' element={<Gallery />} />
+          <Route path='packages' element={<Packages />} />
+          <Route path='about' element={<About />} />
+          <Route path='gallery' element={<Gallery />} />
         </Route>
       </Route>
     )
