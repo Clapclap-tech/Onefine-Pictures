@@ -23,7 +23,7 @@ const Header = () => {
       {/* Logo */}
       <div className="font-bold text-lg">
         <a href="#">
-          <img src="./public/Logo.png" alt="Logo" className="h-14" />
+          <img src="./Logo.png" alt="Logo" className="h-14" />
         </a>
       </div>
 
