@@ -19,7 +19,7 @@ const About = () => {
           <div className="absolute inset-0 border border-black rounded-2xl translate-x-4 translate-y-4 opacity-30 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-300" />
           
           <img
-            src="/src/assets/about.jpg"
+            src="/public/about.jpg"
             alt="About the Studio"
             className="relative rounded-2xl w-full object-cover shadow-xl transition-transform duration-500 group-hover:scale-105"
           />
