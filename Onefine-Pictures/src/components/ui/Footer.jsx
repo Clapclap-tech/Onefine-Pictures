@@ -1,14 +1,21 @@
 import React from "react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black shadow-[0_-20px_30px_-20px_rgba(0,0,0,0.25)]]">
+    <footer className="bg-white text-black shadow-[0_-20px_30px_-20px_rgba(0,0,0,0.25)]">
       <div className="max-w-7xl mx-auto px-6 py-20">
 
         {/* Top Section */}
         <div className="grid gap-16 md:grid-cols-5">
 
-          {/* Logo */}
+          {/* Logo (UNCHANGED) */}
           <div>
             <img
               src="Logo.png"
@@ -21,23 +28,11 @@ const Footer = () => {
           <div>
             <h4 className="font-medium mb-6">Studio</h4>
             <ul className="space-y-4 text-sm text-neutral-700">
-              <li>Gallery</li>
-              <li>Packages</li>
-              <li>About</li>
-              <li>Tracker</li>
-              <li>Contact</li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="font-medium mb-6">Resources</h4>
-            <ul className="space-y-4 text-sm text-neutral-700">
-              <li>Home</li>
-              <li>Portfolio</li>
-              <li>Sessions</li>
-              <li>Prints</li>
-              <li>Inquire</li>
+              <li className="hover:text-black transition cursor-pointer">Gallery</li>
+              <li className="hover:text-black transition cursor-pointer">Packages</li>
+              <li className="hover:text-black transition cursor-pointer">About</li>
+              <li className="hover:text-black transition cursor-pointer">Tracker</li>
+              <li className="hover:text-black transition cursor-pointer">Contact</li>
             </ul>
           </div>
 
@@ -45,11 +40,11 @@ const Footer = () => {
           <div>
             <h4 className="font-medium mb-6">Connect</h4>
             <ul className="space-y-4 text-sm text-neutral-700">
-              <li>Instagram</li>
-              <li>Facebook</li>
-              <li>Twitter</li>
-              <li>LinkedIn</li>
-              <li>Email</li>
+              <li className="hover:text-black transition cursor-pointer">Instagram</li>
+              <li className="hover:text-black transition cursor-pointer">Facebook</li>
+              <li className="hover:text-black transition cursor-pointer">Twitter</li>
+              <li className="hover:text-black transition cursor-pointer">LinkedIn</li>
+              <li className="hover:text-black transition cursor-pointer">Email</li>
             </ul>
           </div>
 
@@ -64,7 +59,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Your email address"
-                className="border border-neutral-400 px-4 py-2 text-sm w-full focus:outline-none"
+                className="border border-neutral-400 px-4 py-2 text-sm w-full focus:outline-none focus:border-black transition"
               />
               <button className="border border-neutral-400 px-6 py-2 text-sm hover:bg-black hover:text-white transition">
                 Join
@@ -86,17 +81,32 @@ const Footer = () => {
 
           <div className="flex flex-wrap gap-6">
             <span>© 2026 Onefine Pictures. All rights reserved.</span>
-            <a href="#" className="underline">Privacy Policy</a>
-            <a href="#" className="underline">Terms of Service</a>
-            <a href="#" className="underline">Cookies Settings</a>
+            <a href="#" className="underline hover:text-black transition">Privacy Policy</a>
+            <a href="#" className="underline hover:text-black transition">Terms of Service</a>
+            <a href="#" className="underline hover:text-black transition">Cookies Settings</a>
           </div>
 
-          <div className="flex items-center gap-5">
-            <span>FB</span>
-            <span>IG</span>
-            <span>X</span>
-            <span>IN</span>
-            <span>YT</span>
+          {/* Social Icons */}
+          <div className="flex items-center gap-6">
+            <a href="#" aria-label="Facebook">
+              <FaFacebookF className="text-neutral-700 hover:text-black hover:scale-110 transition duration-300 cursor-pointer text-sm" />
+            </a>
+
+            <a href="#" aria-label="Instagram">
+              <FaInstagram className="text-neutral-700 hover:text-black hover:scale-110 transition duration-300 cursor-pointer text-sm" />
+            </a>
+
+            <a href="#" aria-label="Twitter">
+              <FaTwitter className="text-neutral-700 hover:text-black hover:scale-110 transition duration-300 cursor-pointer text-sm" />
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+              <FaLinkedinIn className="text-neutral-700 hover:text-black hover:scale-110 transition duration-300 cursor-pointer text-sm" />
+            </a>
+
+            <a href="#" aria-label="YouTube">
+              <FaYoutube className="text-neutral-700 hover:text-black hover:scale-110 transition duration-300 cursor-pointer text-sm" />
+            </a>
           </div>
 
         </div>
