@@ -3,38 +3,38 @@ import React, { useState } from "react"
 // Define your categories with component paths
 const categories = [
   {
-    key: "Graduation",
+    key: "Graduation Shots",
     title: "Graduation Collection",
     subtitle:
       "Capturing memorable graduation moments with emotion, detail, and authenticity.",
     component: () => import("../components/galleryCategories/GraduationShots"),
   },
   {
-    key: "Family",
+    key: "Family Shots",
     title: "Family Moments",
     subtitle: "Cherished family memories captured in heartwarming portraits.",
     component: () => import("../components/galleryCategories/FamilyShots"),
   },
   {
-    key: "Couples",
-    title: "Couples & Engagement",
+    key: "Couples Shots",
+    title: "Couples Shots",
     subtitle: "Romantic and timeless portraits that tell your love story.",
     component: () => import("../components/galleryCategories/CoupleShots"),
   },
   {
     key: "Barkada",
-    title: "Barkada Adventures",
+    title: "Barkada Shots",
     subtitle: "Fun, energetic shots of friends making memories together.",
     component: () => import("../components/galleryCategories/BarkadaShots"),
   },
   {
     key: "Group",
-    title: "Group Portraits",
+    title: "Group Shots",
     subtitle: "Well-composed group photos that capture everyone perfectly.",
     component: () => import("../components/galleryCategories/GroupShots"),
   },
   {
-    key: "Parents",
+    key: "Parents Shots",
     title: "Parents & Guardians",
     subtitle: "Tender moments with parents and loved ones preserved beautifully.",
     component: () => import("../components/galleryCategories/ParentsShots"),
@@ -45,7 +45,6 @@ const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0].key)
   const [ActiveComponent, setActiveComponent] = useState(null)
 
-  // Dynamically load component when category changes
   React.useEffect(() => {
     const category = categories.find((c) => c.key === activeCategory)
     if (!category) return
@@ -63,7 +62,7 @@ const Gallery = () => {
         {/* HEADER */}
         <div className="text-center mb-16">
           <p className="uppercase tracking-[0.35em] text-red-600 text-sm mb-4">
-            {currentCategory.title}
+            Gallery
           </p>
 
           <h1 className="text-5xl font-light text-gray-900">

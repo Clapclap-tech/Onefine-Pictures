@@ -5,7 +5,7 @@ import PictureGrid from '../ui/PictureGrid'
 
 const BarkadaShots = () => {
   return (
-    <PictureGrid images={[
+    <PictureGrid className='aspect=' images={[
         "43",
         "46",
     ]} />
