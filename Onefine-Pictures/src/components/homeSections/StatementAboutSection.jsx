@@ -2,13 +2,13 @@ import React from "react";
 
 const StatementAboutSection = () => {
   return (
-    <section className="relative bg-red-600 text-white overflow-hidden py-16 px-6">
+    <section className="relative bg-red-600 text-white overflow-hidden py-16 px-6 font-heading">
 
-      {/* 🎨 Base Gradient */}
+      {/* Base Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br 
                       from-red-700 via-red-600 to-red-500"></div>
 
-      {/* 🤍 Side Rectangle Depth Shape */}
+      {/* Side Rectangle Depth Shape */}
       <div className="absolute right-[-80px] bottom-0 
                       w-[500px] h-[50px]
                       bg-white/30 

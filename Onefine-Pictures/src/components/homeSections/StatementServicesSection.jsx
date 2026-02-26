@@ -2,7 +2,7 @@ import React from "react";
 
 const StatementServicesSection = () => {
   return (
-    <section className="relative bg-red-600 text-white overflow-hidden py-16 px-6">
+    <section className="relative bg-red-600 text-white overflow-hidden py-16 px-6 font-heading">
 
       {/* 🎨 Base Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br 

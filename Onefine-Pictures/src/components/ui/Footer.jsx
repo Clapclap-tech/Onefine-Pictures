@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black shadow-[0_-20px_30px_-20px_rgba(0,0,0,0.25)]">
+    <footer className="bg-white text-black shadow-[0_-20px_30px_-20px_rgba(0,0,0,0.25)] font-heading">
       <div className="max-w-7xl mx-auto px-6 py-20">
 
         {/* Top Section */}

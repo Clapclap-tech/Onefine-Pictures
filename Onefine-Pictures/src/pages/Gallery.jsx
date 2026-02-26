@@ -1,109 +1,95 @@
-import React, { useState } from "react"
+import React, { useState, lazy, Suspense } from "react"
 
-// Define your categories with component paths
 const categories = [
   {
-    key: "Graduation Shots",
-    title: "Graduation Collection",
-    subtitle:
-      "Capturing memorable graduation moments with emotion, detail, and authenticity.",
-    component: () => import("../components/galleryCategories/GraduationShots"),
+    key: "All Works",
+    component: lazy(() =>
+      import("../components/galleryCategories/GraduationShots")
+    ),
   },
   {
-    key: "Family Shots",
-    title: "Family Moments",
-    subtitle: "Cherished family memories captured in heartwarming portraits.",
-    component: () => import("../components/galleryCategories/FamilyShots"),
+    key: "Family",
+    component: lazy(() =>
+      import("../components/galleryCategories/FamilyShots")
+    ),
   },
   {
-    key: "Couples Shots",
-    title: "Couples Shots",
-    subtitle: "Romantic and timeless portraits that tell your love story.",
-    component: () => import("../components/galleryCategories/CoupleShots"),
+    key: "Couples",
+    component: lazy(() =>
+      import("../components/galleryCategories/CoupleShots")
+    ),
   },
   {
     key: "Barkada",
-    title: "Barkada Shots",
-    subtitle: "Fun, energetic shots of friends making memories together.",
-    component: () => import("../components/galleryCategories/BarkadaShots"),
+    component: lazy(() =>
+      import("../components/galleryCategories/BarkadaShots")
+    ),
   },
   {
     key: "Group",
-    title: "Group Shots",
-    subtitle: "Well-composed group photos that capture everyone perfectly.",
-    component: () => import("../components/galleryCategories/GroupShots"),
+    component: lazy(() =>
+      import("../components/galleryCategories/GroupShots")
+    ),
   },
   {
-    key: "Parents Shots",
-    title: "Parents & Guardians",
-    subtitle: "Tender moments with parents and loved ones preserved beautifully.",
-    component: () => import("../components/galleryCategories/ParentsShots"),
+    key: "Parents",
+    component: lazy(() =>
+      import("../components/galleryCategories/ParentsShots")
+    ),
   },
 ]
 
 const Gallery = () => {
-  const [activeCategory, setActiveCategory] = useState(categories[0].key)
-  const [ActiveComponent, setActiveComponent] = useState(null)
-
-  React.useEffect(() => {
-    const category = categories.find((c) => c.key === activeCategory)
-    if (!category) return
-
-    category.component().then((mod) => {
-      setActiveComponent(() => mod.default)
-    })
-  }, [activeCategory])
-
-  const currentCategory = categories.find((c) => c.key === activeCategory)
+  const [activeCategory, setActiveCategory] = useState(categories[0])
 
   return (
-    <div className="bg-gray-50 min-h-screen py-28">
-      <div className="max-w-[1600px] mx-auto px-10">
+    <section className="relative -top-4 bg-black min-h-screen text-white py-28 px-6">
+      <div className="max-w-7xl mx-auto">
+
         {/* HEADER */}
         <div className="text-center mb-16">
-          <p className="uppercase tracking-[0.35em] text-red-600 text-sm mb-4">
-            Gallery
-          </p>
-
-          <h1 className="text-5xl font-light text-gray-900">
-            {currentCategory.title}
+          <h1 className="text-6xl font-light tracking-wide font-heading">
+            THE <span className="text-red-600 font-semibold">GALLERY</span>
           </h1>
 
-          <div className="w-24 h-[2px] bg-black mx-auto mt-8" />
-
-          <p className="mt-6 text-gray-500 max-w-xl mx-auto leading-relaxed">
-            {currentCategory.subtitle}
+          <p className="text-gray-400 mt-6 max-w-2xl mx-auto leading-relaxed font-body">
+            Capturing the essence of life's most precious moments through a luxury lens.
+            Explore our curated portfolio across diverse specialties.
           </p>
         </div>
 
-        {/* CATEGORY FILTERS */}
-        <div className="flex flex-wrap justify-center gap-10 mb-16 text-sm uppercase tracking-wider">
+        {/* FILTER BUTTONS */}
+        <div className="flex flex-wrap justify-center gap-4 mb-16 font-body font-bold">
           {categories.map((category) => (
             <button
               key={category.key}
-              onClick={() => setActiveCategory(category.key)}
-              className={`relative pb-2 transition-all duration-300
+              onClick={() => setActiveCategory(category)}
+              className={`px-6 py-2 rounded-lg text-sm transition-all duration-300 border
                 ${
-                  activeCategory === category.key
-                    ? "text-red-600"
-                    : "text-gray-400 hover:text-gray-700"
+                  activeCategory.key === category.key
+                    ? "bg-red-600 border-red-600 text-white"
+                    : "border-gray-700 text-gray-400 hover:border-white hover:text-white"
                 }
               `}
             >
               {category.key}
-              {activeCategory === category.key && (
-                <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-red-600" />
-              )}
             </button>
           ))}
         </div>
 
-        {/* GALLERY CONTENT */}
-        <div key={activeCategory} className="transition-all duration-500">
-          {ActiveComponent && <ActiveComponent />}
-        </div>
+        {/* CATEGORY CONTENT */}
+        <Suspense
+          fallback={
+            <div className="text-center py-20 text-gray-500">
+              Loading...
+            </div>
+          }
+        >
+          <activeCategory.component />
+        </Suspense>
+
       </div>
-    </div>
+    </section>
   )
 }
 

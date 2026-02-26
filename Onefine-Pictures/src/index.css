@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+.font-heading {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
 .clip-parallelogram {
     clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
     transition: all 0.3s ease;
