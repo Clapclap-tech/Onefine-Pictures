@@ -10,13 +10,15 @@ const PictureGrid = ({ images, stagger }) => {
   const [direction, setDirection] = useState(null);
   const [animating, setAnimating] = useState(false);
 
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
+
   const closeModal = () => setSelectedIndex(null);
 
   const showNext = () => {
     if (animating) return;
     setAnimating(true);
     setDirection("next");
-
     setTimeout(() => {
       setSelectedIndex((prev) =>
         prev === images.length - 1 ? 0 : prev + 1
@@ -29,7 +31,6 @@ const PictureGrid = ({ images, stagger }) => {
     if (animating) return;
     setAnimating(true);
     setDirection("prev");
-
     setTimeout(() => {
       setSelectedIndex((prev) =>
         prev === 0 ? images.length - 1 : prev - 1
@@ -38,29 +39,23 @@ const PictureGrid = ({ images, stagger }) => {
     }, 200);
   };
 
-  // Keyboard Support
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (selectedIndex === null) return;
-
       if (e.key === "Escape") closeModal();
       if (e.key === "ArrowRight") showNext();
       if (e.key === "ArrowLeft") showPrev();
     };
-
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedIndex, animating]);
 
-  // Preload next & previous images (keeps lazy for grid)
   useEffect(() => {
     if (selectedIndex === null) return;
-
     const nextIndex =
       selectedIndex === images.length - 1 ? 0 : selectedIndex + 1;
     const prevIndex =
       selectedIndex === 0 ? images.length - 1 : selectedIndex - 1;
-
     [images[nextIndex], images[prevIndex]].forEach((id) => {
       const preloadImg = new Image();
       preloadImg.src = cld
@@ -72,9 +67,24 @@ const PictureGrid = ({ images, stagger }) => {
     });
   }, [selectedIndex]);
 
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.changedTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e) => {
+    setTouchEndX(e.changedTouches[0].clientX);
+    if (touchStartX === null) return;
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) showNext();
+      else showPrev();
+    }
+    setTouchStartX(null);
+  };
+
   return (
     <>
-      {/* GRID (Lazy Still Works Here) */}
+      {/* GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
         {images.map((publicId, i) => {
           const img = cld
@@ -82,7 +92,6 @@ const PictureGrid = ({ images, stagger }) => {
             .resize(fill().gravity("auto"))
             .quality(auto())
             .delivery(format("auto"));
-
           return (
             <div
               key={i}
@@ -112,6 +121,8 @@ const PictureGrid = ({ images, stagger }) => {
         <div
           className="fixed inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center z-50 animate-fadeIn"
           onClick={closeModal}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           {/* Previous */}
           <button
@@ -133,7 +144,7 @@ const PictureGrid = ({ images, stagger }) => {
               key={selectedIndex}
               cldImg={cld
                 .image(images[selectedIndex])
-                .resize(fill().width(1600).gravity("auto")) // Optimized
+                .resize(fill().width(1600).gravity("auto"))
                 .quality(auto())
                 .delivery(format("auto"))}
               className={`max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl
