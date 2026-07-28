@@ -1,5 +1,7 @@
 import React from "react";
 import PictureGrid from "../ui/PictureGrid";
+import AutoScrollGallery from "../ui/AutoScrollGallery";
+import FlowGallery from "../ui/FlowGallery";
 
 const AllCategories = () => {
 
@@ -12,7 +14,7 @@ const AllCategories = () => {
     "43",
   ];
 
-  return <PictureGrid images={graduationImages} />;
+  return <FlowGallery images={graduationImages} />;
 };
 
 export default AllCategories;

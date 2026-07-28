@@ -15,7 +15,7 @@ const FeaturedGallerySection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   return (
-    <Section className="bg-black -m-4 py-16">
+    <Section className="bg-black py-60">
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Header */}
@@ -57,9 +57,9 @@ const FeaturedGallerySection = () => {
         </div>
 
         {/* View More Button */}
-        <div className="mt-16 flex justify-center">
-          <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full transition duration-300">
-            View More
+        <div className="mt-10 flex justify-center">
+          <Button className="bg-black hover:bg-red-700 border-2 border-white rounded-xl text-white px-8 py-3 w-70 h-15">
+            VIEW THE FULL GALLERY
           </Button>
         </div>
       </div>

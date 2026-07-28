@@ -12,8 +12,11 @@ import StatementServicesSection from '../components/homeSections/StatementServic
 
 const Home = () => {
   return (
-    <div className="">
+    <div>
       <Hero />
+        <div className="absolute left-0 right-0 top-[calc(90vh-120px)] z-10 flex justify-center pointer-events-none">
+          <img src="/Asset 95@4x 1.svg" alt="Bottom Fade" className="h-auto w-full" />
+        </div>
       <FeaturedGallery />
       <StatementServicesSection />
       <ServicesSection />

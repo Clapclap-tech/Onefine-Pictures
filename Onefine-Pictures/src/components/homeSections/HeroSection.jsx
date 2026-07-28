@@ -3,7 +3,7 @@ import Button from "../ui/Button";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen -top-4 bg-black flex items-center justify-center overflow-hidden">
+    <section className="flex min-h-screen top-0 bg-black flex items-center justify-center overflow-hidden">
 
       {/* Background Image */}
       <div
@@ -20,7 +20,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06),transparent_60%)]"></div>
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl px-6">
+      <div className="relative z-10 text-center max-w-4xl px-6 -mt-50">
 
         <h1 className="text-white font-bold leading-tight font-heading
                        text-4xl md:text-6xl lg:text-7xl tracking-tight">
@@ -45,10 +45,6 @@ const Hero = () => {
         </div>
 
       </div>
-
-      {/* Bottom Fade Effect */}
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent"></div>
-
     </section>
   );
 };

@@ -12,20 +12,22 @@ const Header = () => {
     { name: "SERVICES", path: "/services" },
     { name: "ABOUT", path: "/about" },
     { name: "CONTACT", path: "/contact" },
+    { name: "FAQ", path: "/faq" },
   ];
-
+  
   return (
-    <header className="fixed font-body font-bold top-0 left-0 w-full bg-black z-50 shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-8 h-16">
+<header className="fixed top-0 left-0 w-full z-50">  
+  <div className="absolute inset-0 h-24 bg-gradient-to-b from-black/70 to-transparent"></div>
 
+  <div className="relative max-w-7xl mx-auto flex items-center justify-between px-6 md:px-8 h-20">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
           <img src="./Logo.png" alt="Logo" className="h-12" />
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Left Navigation */}
         <nav className="hidden md:flex items-center space-x-10 text-xs tracking-[0.3em] font-medium">
-          {navItems.map((item) => {
+          {navItems.slice(0, 3).map((item) => {
             const isActive = location.pathname === item.path;
             return (
               <Link
@@ -36,12 +38,32 @@ const Header = () => {
                 } group`}
               >
                 {item.name}
-                {/* Underline animation */}
-                <span
-                  className={`absolute left-0 -bottom-2 h-[1px] bg-red-600 transition-all duration-300 ${
-                    isActive ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
-                ></span>
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Centered Logo */}
+        <Link
+          to="/"
+          className="absolute left-1/2 transform -translate-x-1/2 flex items-center"
+        >
+          <img src="/Logo.png" alt="Logo" className="h-12" />
+        </Link>
+
+        {/* Right Navigation */}
+        <nav className="hidden md:flex items-center space-x-10 text-xs tracking-[0.3em] font-medium">
+          {navItems.slice(3).map((item) => {
+            const isActive = location.pathname === item.path;
+            return (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`relative transition duration-300 ${
+                  isActive ? "text-red-600" : "text-gray-300 hover:text-white"
+                } group`}
+              >
+                {item.name}
               </Link>
             );
           })}
@@ -80,9 +102,6 @@ const Header = () => {
           })}
         </nav>
       </div>
-
-      {/* Subtle bottom divider */}
-      <div className="h-[1px] bg-white/10 w-full"></div>
     </header>
   );
 };
