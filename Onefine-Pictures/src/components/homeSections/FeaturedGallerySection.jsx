@@ -15,21 +15,21 @@ const FeaturedGallerySection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   return (
-    <Section className="bg-black py-60">
+    <Section className="bg-white py-60">
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="mb-12 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white font-heading">
-            Our Gallery
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-medium text-[#BD0B02]">
+            The Gallery
           </h2>
-          <p className="mt-4 text-gray-300 max-w-xl mx-auto font-body">
-            Explore our collection of beautiful moments captured through our lens
+          <p className="mt-10 text-black text-xl font-outfit font-normal tracking-wider">
+            Explore our collection of beautiful moments <br /> captured through our lens
           </p>
         </div>
 
         {/* Categories */}
-        <div className="flex justify-center gap-8 mb-12 text-sm font-medium font-body">
+        <div className="flex justify-center gap-8 mb-12 text-m font-medium font-outfit tracking-widest space-x-20">
           {categories.map((category) => (
             <button
               key={category}
@@ -37,7 +37,7 @@ const FeaturedGallerySection = () => {
               className={`pb-1 transition-colors duration-300 ${
                 activeCategory === category
                   ? "text-red-600 border-b-2 border-red-600"
-                  : "text-gray-400 hover:text-gray-200"
+                  : "text-black hover:text-black"
               }`}
             >
               {category}

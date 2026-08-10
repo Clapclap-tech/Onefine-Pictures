@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const navItems = [
     { name: "HOME", path: "/" },
@@ -14,28 +27,41 @@ const Header = () => {
     { name: "CONTACT", path: "/contact" },
     { name: "FAQ", path: "/faq" },
   ];
-  
+
   return (
-<header className="fixed top-0 left-0 w-full z-50">  
-  <div className="absolute inset-0 h-24 bg-gradient-to-b from-black/70 to-transparent"></div>
+    <header
+      className={`fixed top-0 left-0 w-full z-50 font-outfit font-bold transition-all duration-500 bg-gradient-to-b from-black via-black/30 to-transparent ${
+        scrolled
+          ? "bg-black"
+          : "bg-transparent"
+      }`}
+    >
+      {/* Desktop Header */}
+      <div className="relative flex items-center justify-between px-6 md:px-10 py-4">
 
-  <div className="relative max-w-7xl mx-auto flex items-center justify-between px-6 md:px-8 h-20">
-        {/* Logo */}
-        <Link to="/" className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
-          <img src="./Logo.png" alt="Logo" className="h-12" />
+        {/* Left - Logo */}
+        <Link to="/" className="flex items-center">
+          <img
+            src="/Logo.png"
+            alt="Logo"
+            className="h-12"
+          />
         </Link>
 
-        {/* Left Navigation */}
-        <nav className="hidden md:flex items-center space-x-10 text-xs tracking-[0.3em] font-medium">
-          {navItems.slice(0, 3).map((item) => {
+        {/* Center - Navigation */}
+        <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-10 text-xs tracking-[0.3em] font-bold">
+          {navItems.map((item) => {
             const isActive = location.pathname === item.path;
+
             return (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`relative transition duration-300 ${
-                  isActive ? "text-red-600" : "text-gray-300 hover:text-white"
-                } group`}
+                className={`transition duration-300 ${
+                  isActive
+                    ? "text-red-600"
+                    : "text-gray-300 hover:text-white"
+                }`}
               >
                 {item.name}
               </Link>
@@ -43,57 +69,40 @@ const Header = () => {
           })}
         </nav>
 
-        {/* Centered Logo */}
-        <Link
-          to="/"
-          className="absolute left-1/2 transform -translate-x-1/2 flex items-center"
-        >
-          <img src="/Logo.png" alt="Logo" className="h-12" />
-        </Link>
-
-        {/* Right Navigation */}
-        <nav className="hidden md:flex items-center space-x-10 text-xs tracking-[0.3em] font-medium">
-          {navItems.slice(3).map((item) => {
-            const isActive = location.pathname === item.path;
-            return (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`relative transition duration-300 ${
-                  isActive ? "text-red-600" : "text-gray-300 hover:text-white"
-                } group`}
-              >
-                {item.name}
-              </Link>
-            );
-          })}
-        </nav>
-
-        {/* Mobile menu button */}
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-300 focus:outline-none"
+          className="md:hidden ml-auto text-gray-300 focus:outline-none"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? <FaTimes className="text-xl" /> : <FaBars className="text-xl" />}
+          {mobileOpen ? (
+            <FaTimes className="text-xl" />
+          ) : (
+            <FaBars className="text-xl" />
+          )}
         </button>
       </div>
 
       {/* Mobile Navigation */}
       <div
-        className={`md:hidden bg-black transition-all duration-300 overflow-hidden ${
-          mobileOpen ? "max-h-60" : "max-h-0"
+        className={`md:hidden transition-all duration-300 overflow-hidden ${
+          mobileOpen
+            ? "max-h-96 bg-black"
+            : "max-h-0 bg-transparent"
         }`}
       >
         <nav className="flex flex-col px-6 py-4 space-y-4 text-sm tracking-widest font-medium">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
+
             return (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={() => setMobileOpen(false)}
                 className={`transition duration-300 ${
-                  isActive ? "text-red-600" : "text-gray-300 hover:text-white"
+                  isActive
+                    ? "text-red-600"
+                    : "text-gray-300 hover:text-white"
                 }`}
               >
                 {item.name}

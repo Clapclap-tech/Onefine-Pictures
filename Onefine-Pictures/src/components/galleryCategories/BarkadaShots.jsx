@@ -5,7 +5,7 @@ import PictureGrid from '../ui/PictureGrid'
 
 const BarkadaShots = () => {
   return (
-    <PictureGrid className='aspect=' images={[
+    <AutoScrollGallery className='aspect=' images={[
         "43",
         "46",
     ]} />

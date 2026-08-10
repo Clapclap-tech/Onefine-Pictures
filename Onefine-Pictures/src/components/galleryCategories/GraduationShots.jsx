@@ -5,7 +5,7 @@ import PictureGrid from '../ui/PictureGrid'
 
 const GraduationShots = () => {
   return (
-    <PictureGrid images={[
+    <AutoScrollGallery images={[
         "16x20-aiah",
         "16x20-ctu",
         "16x20-jamie",

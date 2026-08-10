@@ -3,7 +3,7 @@ import PictureGrid from '../ui/PictureGrid'
 
 const CoupleShots = () => {
   return (
-    <PictureGrid images={[
+    <AutoScrollGallery images={[
         "g1.jpg",
         "g1.jpg",
         "g1.jpg",

@@ -14,7 +14,7 @@ const AllCategories = () => {
     "43",
   ];
 
-  return <FlowGallery images={graduationImages} />;
+  return <AutoScrollGallery images={graduationImages} />;
 };
 
 export default AllCategories;

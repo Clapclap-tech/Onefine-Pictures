@@ -5,7 +5,7 @@ import PictureGrid from '../ui/PictureGrid'
 
 const GroupShots = () => {
   return (
-    <PictureGrid images={[
+    <AutoScrollGallery images={[
         "41",
         "61",
     ]} />

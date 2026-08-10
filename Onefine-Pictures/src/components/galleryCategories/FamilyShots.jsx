@@ -5,7 +5,7 @@ import PictureGrid from '../ui/PictureGrid'
 
 const FamilyShots = () => {
   return (
-    <PictureGrid images={[
+    <AutoScrollGallery images={[
         "59",
 
     ]} />
