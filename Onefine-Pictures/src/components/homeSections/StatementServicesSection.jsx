@@ -2,7 +2,7 @@ import React from "react";
 
 const StatementServicesSection = () => {
   return (
-    <section className="relative bg-[#C80006] text-white overflow-hidden py-16 px-6 font--outfit">
+    <section className="relative bg-[#C80006] text-white overflow-hidden mt-[-5rem] py-16 px-6 font--outfit">
 
       {/* 🎨 Base Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br 
@@ -14,7 +14,7 @@ const StatementServicesSection = () => {
           The 
           <span className="font-bold"> STUDIO </span>
            with a 
-           <span className="font-bold"> HEART </span>
+           <span className="font-bold"> HEART</span>
            , <br /> For the 
            <span className="font-bold"> Graduates </span>
             & for the  

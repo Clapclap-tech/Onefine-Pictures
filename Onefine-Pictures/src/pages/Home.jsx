@@ -9,6 +9,8 @@ import ServicesSection from '../components/homeSections/ServicesSection';
 import BookingCTA from '../components/homeSections/BookingCTA';
 import StatementAboutSection from '../components/homeSections/StatementAboutSection';
 import StatementServicesSection from '../components/homeSections/StatementServicesSection';
+import FeedbackSection from '../components/homeSections/FeedbacksSection';
+import ExperienceSection from '../components/homeSections/ExperienceSection';
 
 const Home = () => {
   return (
@@ -19,7 +21,9 @@ const Home = () => {
         </div>
       <FeaturedGallery />
       <StatementServicesSection />
+      <FeedbackSection />
       <ServicesSection />
+      <ExperienceSection />
       <BookingCTA />
       <StatementAboutSection />
       <About />

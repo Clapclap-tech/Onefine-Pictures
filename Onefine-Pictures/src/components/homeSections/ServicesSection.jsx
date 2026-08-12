@@ -10,22 +10,16 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="relative py-32 bg-black overflow-hidden ">
-
-      {/* Large Camera Watermark */}
-      <Camera className="absolute text-white/5 text-[20rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none" />
-
-      {/* Subtle depth gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/0"></div>
+    <section className="relative py-10 pb-10 mb-20 bg-white overflow-hidden ">
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-white font-heading">
+          <h2 className="text-5xl md:text-6xl font-semibold text-[#BD0B02] font-outfit tracking-wider">
             Our Services
           </h2>
-          <p className="mt-4 text-gray-300 max-w-2xl mx-auto font-body">
-            Thoughtfully crafted photography services for every milestone. We make each moment unforgettable.
+          <p className="mt-8 text-black max-w-2xl mx-auto font-outfit text-lg tracking-wider">
+            Thoughtfully crafted photography services for every <br /> milestone. We make each moment unforgettable.
           </p>
         </div>
 
