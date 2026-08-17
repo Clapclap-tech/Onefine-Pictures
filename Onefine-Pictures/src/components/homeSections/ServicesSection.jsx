@@ -1,11 +1,42 @@
 import React from "react";
-import { Camera, Users, Heart, Calendar } from "lucide-react";
+import ExperienceCard from "../ui/ExperienceCard";
 
-const services = [
-  { title: "Graduation", desc: "Celebrate academic milestones with timeless portraits.", icon: Camera, color: "bg-red-600" },
-  { title: "Family", desc: "Warm, authentic moments captured with the people you love.", icon: Users, color: "bg-green-600" },
-  { title: "Couples", desc: "Intimate storytelling for engagements and portraits.", icon: Heart, color: "bg-pink-600" },
-  { title: "Events", desc: "Professional coverage for important occasions.", icon: Calendar, color: "bg-yellow-600" },
+import {
+    GraduationCap,
+    UsersRound,
+    Heart,
+    CalendarDays,
+} from "lucide-react";
+
+const experiences = [
+    {
+        image: "/images/graduation.jpg",
+        icon: GraduationCap,
+        title: "Graduation",
+        description:
+            "Celebrate academic milestones with timeless portraits.",
+    },
+    {
+        image: "/images/family.jpg",
+        icon: UsersRound,
+        title: "Family",
+        description:
+            "Warm, authentic moments captured with the people you love.",
+    },
+    {
+        image: "/images/couples.jpg",
+        icon: Heart,
+        title: "Couples",
+        description:
+            "Intimate storytelling for engagements and portraits",
+    },
+    {
+        image: "/images/events.jpg",
+        icon: CalendarDays,
+        title: "Events",
+        description:
+            "Professional coverage for important occasions",
+    },
 ];
 
 const ServicesSection = () => {
@@ -23,31 +54,16 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        {/* Services Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 font-body">
-          {services.map((service, i) => {
-            const Icon = service.icon;
-            return (
-              <div
-                key={i}
-                className="relative bg-gray-900 rounded-3xl p-8 shadow-[0_15px_40px_rgba(0,0,0,0.2)]
-                           hover:shadow-[0_25px_60px_rgba(255,255,255,0.05)] 
-                           hover:-translate-y-3 transition-all duration-500 cursor-pointer overflow-hidden"
-              >
-                {/* Icon Circle */}
-                <div className={`flex items-center justify-center w-12 h-12 rounded-full mb-6 ${service.color} text-white shadow-lg`}>
-                  <Icon size={22} />
-                </div>
-
-                {/* Title */}
-                <h3 className="text-lg font-semibold text-white mb-2">{service.title}</h3>
-
-                {/* Description */}
-                <p className="text-gray-300 text-sm leading-relaxed">{service.desc}</p>
-              </div>
-            );
-          })}
-        </div>
+        <section className="w-full px-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[3px]">
+                {experiences.map((experience) => (
+                    <ExperienceCard
+                        key={experience.title}
+                        {...experience}
+                    />
+                ))}
+            </div>
+        </section>
 
         {/* CTA Button */}
         <div className="mt-16 flex justify-center">

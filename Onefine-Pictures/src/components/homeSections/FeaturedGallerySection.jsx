@@ -17,7 +17,7 @@ const FeaturedGallerySection = () => {
   return (
     <Section className="bg-white py-60">
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="w-full relative z-10">
         {/* Header */}
         <div className="mb-12 text-center">
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-medium text-[#BD0B02]">
@@ -56,12 +56,6 @@ const FeaturedGallerySection = () => {
           {activeCategory === "Parents" && <ParentsShots />}
         </div>
 
-        {/* View More Button */}
-        <div className="mt-10 flex justify-center">
-          <Button className="bg-black hover:bg-red-700 border-2 border-white rounded-xl text-white px-8 py-3 w-70 h-15">
-            VIEW THE FULL GALLERY
-          </Button>
-        </div>
       </div>
     </Section>
   );
