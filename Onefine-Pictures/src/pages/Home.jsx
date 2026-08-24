@@ -11,6 +11,7 @@ import StatementAboutSection from '../components/homeSections/StatementAboutSect
 import StatementServicesSection from '../components/homeSections/StatementServicesSection';
 import FeedbackSection from '../components/homeSections/FeedbacksSection';
 import ExperienceSection from '../components/homeSections/ExperienceSection';
+import SchoolLogoSection from '../components/homeSections/SchoolLogosSection';
 
 const Home = () => {
   return (
@@ -24,7 +25,7 @@ const Home = () => {
       <FeedbackSection />
       <ServicesSection />
       <BookingCTA />
-      <StatementAboutSection />
+      <SchoolLogoSection />
       <About />
       <Location />
 

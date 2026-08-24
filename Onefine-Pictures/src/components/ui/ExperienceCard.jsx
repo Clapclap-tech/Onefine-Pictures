@@ -8,8 +8,7 @@ const ExperienceCard = ({
     emoji,
 }) => {
     return (
-        <div className="relative aspect-square w-full overflow-hidden group">
-            
+        <div className="relative w-full aspect-square overflow-hidden group">
             {/* Background Image */}
             <img
                 src={image}
@@ -35,22 +34,47 @@ const ExperienceCard = ({
             />
 
             {/* Content */}
-            <div className="absolute inset-0 p-8 flex flex-col justify-end">
-
+            <div
+                className="
+                    absolute inset-0
+                    p-5
+                    flex flex-col
+                    justify-end
+                "
+            >
                 {/* Icon */}
                 <Icon
-                    size={48}
+                    size={32}
                     strokeWidth={2}
-                    className="text-white mb-7"
+                    className="text-white mb-4"
                 />
 
                 {/* Title */}
-                <h2 className="text-white text-3xl font-outfit font-semibold tracking-wide">
+                <h2
+                    className="
+                        text-white
+                        text-xl
+                        font-outfit
+                        font-semibold
+                        tracking-wide
+                    "
+                >
                     {title}
                 </h2>
 
                 {/* Description */}
-                <p className="text-white text-xl font-outfit font-normal tracking-wide leading-tight max-w-[400px] mt-5">
+                <p
+                    className="
+                        text-white
+                        text-sm
+                        font-outfit
+                        font-normal
+                        tracking-wide
+                        leading-tight
+                        max-w-[230px]
+                        mt-3
+                    "
+                >
                     {description}
                 </p>
             </div>
@@ -64,11 +88,14 @@ const ExperienceCard = ({
                         top-[58%]
                         -translate-x-1/2
                         -translate-y-1/2
-                        w-16 h-16
+                        w-10
+                        h-10
                         rounded-full
                         bg-sky-500
-                        flex items-center justify-center
-                        text-3xl
+                        flex
+                        items-center
+                        justify-center
+                        text-xl
                     "
                 >
                     {emoji}
@@ -77,21 +104,30 @@ const ExperienceCard = ({
 
             {/* Arrow */}
             <button
+                type="button"
                 className="
                     absolute
-                    right-8
-                    bottom-8
-                    w-12 h-12
+                    right-5
+                    bottom-5
+                    w-9
+                    h-9
                     rounded-full
-                    border-2 border-white
-                    flex items-center justify-center
+                    border-2
+                    border-white
+                    flex
+                    items-center
+                    justify-center
                     text-white
-                    transition-all duration-300
+                    transition-all
+                    duration-300
                     group-hover:bg-white
                     group-hover:text-[#d90000]
                 "
             >
-                <ArrowRight size={28} strokeWidth={1.8} />
+                <ArrowRight
+                    size={21}
+                    strokeWidth={1.8}
+                />
             </button>
         </div>
     );

@@ -67,7 +67,7 @@ const ServicesSection = () => {
 
         {/* CTA Button */}
         <div className="mt-16 flex justify-center">
-          <button className="relative font-body overflow-hidden px-8 py-3 rounded-full bg-red-600 text-white font-semibold group shadow-lg hover:shadow-xl transition-transform active:scale-[0.97]">
+          <button className="relative font-body overflow-hidden px-8 py-3 rounded-xl border-1 border-black bg-white text-black font-semibold group shadow-lg hover:shadow-xl transition-transform active:scale-[0.97]">
             <span className="relative z-10">Explore All Services</span>
             <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-full" />
           </button>
