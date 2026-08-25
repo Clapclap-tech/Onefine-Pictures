@@ -13,7 +13,7 @@ const experiences = [
         icon: GraduationCap,
         title: "Graduation",
         description:
-            "Celebrate academic milestones with timeless portraits.",
+            "Celebrate academic milestones with timeless portraits.", 
     },
     {
         image: "/images/family.jpg",

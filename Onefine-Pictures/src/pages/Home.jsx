@@ -12,6 +12,9 @@ import StatementServicesSection from '../components/homeSections/StatementServic
 import FeedbackSection from '../components/homeSections/FeedbacksSection';
 import ExperienceSection from '../components/homeSections/ExperienceSection';
 import SchoolLogoSection from '../components/homeSections/SchoolLogosSection';
+import StatementSection from '../components/homeSections/StatementSection';
+import CompanySection from '../components/homeSections/CompanySection';
+import AwardsSection from '../components/homeSections/AwardsSection';
 
 const Home = () => {
   return (
@@ -26,6 +29,9 @@ const Home = () => {
       <ServicesSection />
       <BookingCTA />
       <SchoolLogoSection />
+      <StatementSection />
+      <CompanySection />
+      <AwardsSection />
       <About />
       <Location />
 

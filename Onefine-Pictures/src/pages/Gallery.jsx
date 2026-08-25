@@ -43,7 +43,7 @@ const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0])
 
   return (
-    <section className="relative -top-4 bg-black min-h-screen text-white py-28 px-6">
+    <section className="relative top-0 bg-black min-h-screen text-white  py-28 px-6">
       <div className="max-w-7xl mx-auto">
 
         {/* HEADER */}

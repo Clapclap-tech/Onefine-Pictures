@@ -8,6 +8,15 @@
   --font-noto-serif-kr: "Noto Serif KR", serif;
 }
 
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
 .clip-parallelogram {
     clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
     transition: all 0.3s ease;

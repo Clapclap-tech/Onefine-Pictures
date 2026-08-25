@@ -28,14 +28,19 @@ const Header = () => {
     { name: "FAQ", path: "/faq" },
   ];
 
+  const isHomePage = location.pathname === "/";
+  const isGalleryPage = location.pathname === "/gallery";
+
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 font-outfit font-bold transition-all duration-500 bg-gradient-to-b from-black via-black/30 to-transparent ${
-        scrolled
-          ? "bg-black"
-          : "bg-transparent"
-      }`}
-    >
+        <header
+            className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
+                isHomePage
+                    ? "bg-transparent"
+                    : isGalleryPage
+                    ? "bg-black"
+                    : "bg-black"
+            }`}
+        >
       {/* Desktop Header */}
       <div className="relative flex items-center justify-between px-6 md:px-10 py-4">
 

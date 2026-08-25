@@ -4,7 +4,7 @@ import Button from "../ui/Button";
 
 const GalleryHeader = () => {
   return (
-    <Section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-red-500 via-red-600 to-red-700">
+    <Section className="relative top-0 flex items-center justify-center overflow-hidden bg-gradient-to-br from-red-500 via-red-600 to-red-700">
 
       {/* Decorative Blobs */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-red-400 rounded-full opacity-30 blur-3xl animate-blob"></div>
