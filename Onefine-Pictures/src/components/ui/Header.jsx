@@ -14,6 +14,8 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
 
+    handleScroll();
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -28,22 +30,22 @@ const Header = () => {
     { name: "FAQ", path: "/faq" },
   ];
 
-  const isHomePage = location.pathname === "/";
-  const isGalleryPage = location.pathname === "/gallery";
+  // Pages that should have transparent header at the top
+  const transparentPages = ["/", ""];
+
+  const isTransparentPage = transparentPages.includes(location.pathname);
 
   return (
-        <header
-            className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
-                isHomePage
-                    ? "bg-transparent"
-                    : isGalleryPage
-                    ? "bg-black"
-                    : "bg-black"
-            }`}
-        >
+    <header
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
+        isTransparentPage && !scrolled
+          ? "bg-transparent"
+          : "bg-black"
+      }`}
+    >
       {/* Desktop Header */}
       <div className="relative flex items-center justify-between px-6 md:px-10 py-4">
-
+        
         {/* Left - Logo */}
         <Link to="/" className="flex items-center">
           <img
@@ -78,6 +80,7 @@ const Header = () => {
         <button
           className="md:hidden ml-auto text-gray-300 focus:outline-none"
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
         >
           {mobileOpen ? (
             <FaTimes className="text-xl" />
